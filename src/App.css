@@ -1,0 +1,142 @@
+/* import 'bootstrap/dist/css/bootstrap.min.css'; */
+
+.App {
+  /* text-align: center; */
+}
+.App-header {
+  min-height: 20vh;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; */
+  font-size: calc(10px + 2vmin);
+  color: #282c34;
+  margin:20px;
+}
+
+.App-link {
+  color: #61dafb;
+}
+ul{
+  display:flex;
+  flex-direction: column;
+  padding-left: 15px;
+}
+li{
+  width:100px;
+  list-style-type: none;
+  padding: 5px;
+}
+a{
+  color: #282c34;
+  text-decoration: none;
+}
+.header{
+  clear:both;
+}
+.logo-box{
+  float:left;
+  /* background-color: beige; */
+  width:8em;
+  height:4em;
+  /* background-image: url('../public/nykaa_logo.svg'); */
+}
+.user-header-info{
+  float: right;
+  background-color: beige;
+  width:8em;
+  height:4em;
+}
+.border-1px{
+  border: 1px solid red;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  margin-top:120px;
+  background-color: #111;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 0px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  color: white;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  /* margin-left:20px; */
+}
+.sidebar .closebtn:hover {
+  color: white;
+  cursor:pointer;
+}
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+
+
+.cardHomePage{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* overflow:auto;  */
+}
+.cardStyle{
+  /* border:1px solid red; */
+  margin: 10px;
+}
+.cardStyle img{
+  width:250px; 
+  height: 250px;
+}
+.cardProductDetails{
+  text-align: center;
+}
+
+
+
+
+
