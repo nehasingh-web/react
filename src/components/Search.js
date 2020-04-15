@@ -7,22 +7,21 @@ class Search extends Component {
     }
 
     renderProduct = product => {
-        const { search } = this.state;
-        var code = product.title.toLowerCase()
+       // const { search } = this.state;
+       // var code = product.title.toLowerCase()
 
         /*if( search !== "" && country.name.toLowerCase().indexOf( search.toLowerCase() ) === -1 ){
             return null
         }*/
 
-        return <div className="col-md-3" style={{ marginTop: '0px' }}>
-            <div className='cardStyle'>
-                <img src={product.imageUrl}></img>
+        return <div className='cardStyle'>
+                <img alt='product' src={product.imageUrl}></img>
                 <div className='cardProductDetails'>
                     <h4>{product.title} </h4>
                     Price: {product.price}
                 </div>
             </div>
-        </div>
+      
     }
 
     onchange = e => {
@@ -37,15 +36,10 @@ class Search extends Component {
         })
 
         return (
-            <div className="flyout">
-                <main style={{ marginTop: '0rem' }}>
+                <main>
                     <div className="container">
-                        <div className="row">
-                            <div className="col"></div>
-                            <div className="col">
-                                <input placeholder="Search Title..." onChange={this.onchange} />
-                            </div>
-                            <div className="col"></div>
+                        <div className="flex flex-center">
+                            <input placeholder="Search Title..." onChange={this.onchange} />
                         </div>
                         <div className="row">
                             <div className='cardHomePage'>
@@ -57,8 +51,6 @@ class Search extends Component {
                         </div>
                     </div>
                 </main>
-
-            </div>
         );
     }
 }

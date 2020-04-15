@@ -1,0 +1,26 @@
+.flex{
+    display: flex;
+}
+.flex-center{
+    align-items: center;
+    justify-content: center;
+}
+.cardHomePage{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* overflow:auto;  */
+  }
+  .cardStyle{
+    /* border:1px solid red; */
+    margin: 10px;
+  }
+  .cardStyle img{
+    width:250px; 
+    height: 250px;
+  }
+  .cardProductDetails{
+    text-align: center;
+  }
+  
+  
