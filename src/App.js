@@ -1,26 +1,52 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import Header from './components/Header';
+import RouterFile from './RouterFile';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+
+// function App() {
+  class App extends Component{
+  
+  
+    // <Router>
+    //   <div className="App container">
+    //     <header className="App-header">
+    //       <Header />
+    //     </header>
+    //     <div className='row'>
+    //       <ul className='col-lg-3 '>
+    //         <li>
+    //           <Link to='/'>Home</Link>
+    //         </li>
+    //         <li>
+    //           <Link to='/about'>About</Link>
+    //         </li>
+    //         <li>
+    //           <Link to='/contact'>Contact</Link>
+    //         </li>
+    //       </ul>
+    //     <div className='col-lg-9'>
+    //       <Switch>
+    //         <Route exact path='/' component={Home} />
+    //         <Route exact path='/about' component={About} />
+    //         <Route exact path='/contact' component={Contact} />
+    //       </Switch>
+    //     </div>
+    //     </div>
+    //   </div>
+    // </Router>
+    render(){
+    return (
+      <div className="App">
+              <header className="App-header">
+                <Header />
+              </header>
+              
+     <RouterFile />
+     </div>
   );
 }
+  }
 
 export default App;
