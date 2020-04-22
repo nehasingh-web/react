@@ -57,6 +57,9 @@ a{
   animation: slide-open .75 forwards;
   background-color: #282c34;
 }
+.text-align-center{
+  text-align: center;
+}
 
 
 

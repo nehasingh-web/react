@@ -1,25 +1,32 @@
 import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Detail extends Component {
     state = {
-        loading:true,
-        human:null
+        loading: true,
+        user: []
     }
     async componentDidMount() {
-        const url = 'https://api.randomuser.me/';
+        const url = 'https://jsonplaceholder.typicode.com/posts';
         const response = await fetch(url);
         const data = await response.json();
-        this.setState({ human: data.results[0], loading:false})
+        this.setState({ user: data, loading: false })
     }
-    render(){
-        return( this.state.loading || !this.state.human ? 
-            ( <div> Loading...</div>): 
-            <div>
-                <div>{ this.state.human.name.title}</div>
+    renderList = list => {
+        return <div className='list-detail'>
+            <li><b>Title: </b>{list.title} </li>
+        </div>
+    }
+    render() {
+        return (this.state.loading || !this.state.user ?
+            (<div> Loading...</div>) :
+            <div className="col">
+                <div className='flex-center'>Some Titles 
+                    {this.state.user.map(list => {
+                        return this.renderList(list)
+                    })}
+                </div>
             </div>
         )
     }
-
 }
 export default Detail;

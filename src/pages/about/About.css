@@ -1,0 +1,15 @@
+.flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+.list-detail{
+    width:700px;
+    background-color: lightslategray;
+    padding:5px;
+    margin:5px 10px;
+    box-shadow: 4px 4px 4px lightsteelblue;
+    
+}

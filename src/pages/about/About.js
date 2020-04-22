@@ -1,9 +1,10 @@
 import  React from 'react';
-import Detail from '../../components/Detail'
+import Detail from '../../components/Detail';
+import './About.css'
 
 function About() {
     return (
-        <div className=""> Coming from Api
+        <div className='row'>
         <Detail />
         </div>
     )
