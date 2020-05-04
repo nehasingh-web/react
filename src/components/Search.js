@@ -59,16 +59,14 @@ class Search extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    return{
+const mapStateToProps = (state) => ({
         search: state.search
-    }
-}
+})
 const mapDispachToProps = (dispach) => ({ 
 
-        onchange: (value) => dispach({
+        onchange: (e) => dispach({
             type:'On_Change',
-            payload:value
+            payload:e.target.value
         })
 
 })

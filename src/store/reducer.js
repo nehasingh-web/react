@@ -4,10 +4,11 @@ const intialState = {
 }
 
 const reducer = (state = intialState, action) => {
+    console.log(action.payload, 'A')
     let newState = {...state}
 
     if(action.type === 'On_Change'){
-        newState= action.payload
+        newState.search = action.payload
     }
 
     return newState;
