@@ -1,0 +1,31 @@
+.flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+.contactForm{
+    width:750px;
+    padding: 0 20px;
+    text-align: center;
+    padding:20px;
+}
+.form-wrapper{
+    background-color: lightsteelblue;
+    padding:20px 0;
+}
+.inputField {
+    margin:10px;
+}
+.inputField input, .inputField textarea{
+    border:none;
+    border-bottom:1px solid black;
+    width:400px;
+    background-color: lightsteelblue;
+    outline:none;
+}
+input:-internal-autofill-selected{
+    background-color: lightsteelblue !important;
+    color: red !important;
+}

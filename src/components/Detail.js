@@ -12,9 +12,9 @@ class Detail extends Component {
         this.setState({ user: data, loading: false })
     }
     renderList = list => {
-        return <div className='list-detail'>
+        return <ul className='list-detail' key={list.id}>
             <li><b>Title: </b>{list.title} </li>
-        </div>
+        </ul>
     }
     render() {
         return (this.state.loading || !this.state.user ?

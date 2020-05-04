@@ -14,3 +14,7 @@ code {
 button:focus {
   outline:0px !important;
 }
+.form-control:focus{
+  box-shadow: none !important;
+  border-color: none!important;
+}

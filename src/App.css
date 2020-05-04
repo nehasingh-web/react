@@ -26,19 +26,22 @@ a{
   color:#ffffff !important;
   text-decoration: none;
 }
+input{
+    border:none;
+    border-bottom:1px solid black;
+    width:400px;
+    outline:none;
+}
 .header{
   clear:both;
 }
 .logo-box{
   float:left;
-  width:8em;
-  height:4em;
+  width:7.5em;
+  height:0em;
 }
 .user-header-info{
   float: right;
-  background-color: beige;
-  width:8em;
-  height:4em;
 }
 .border-1px{
   border: 1px solid red;

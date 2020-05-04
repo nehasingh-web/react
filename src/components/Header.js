@@ -8,7 +8,7 @@ class Header extends Component{
                     <img src={logo} alt='Logo' />
                 </div>
                 <div className='user-header-info'>
-                    some User info
+                   Settings
                 </div>
             </div>
         )

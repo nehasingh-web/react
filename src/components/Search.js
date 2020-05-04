@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import Products from '../assets/products-dataset.json';
+import { connect } from 'react-redux';
 
 class Search extends Component {
-    state = {
-        search: ""
-    }
+    // state = {
+    //     search: ""
+    // }
 
     renderProduct = product => {
        // const { search } = this.state;
@@ -14,7 +15,7 @@ class Search extends Component {
             return null
         }*/
 
-        return <div className='cardStyle'>
+        return <div className='cardStyle' key={product.id}>
                 <img alt='product' src={product.imageUrl}></img>
                 <div className='cardProductDetails'>
                     <h4>{product.title} </h4>
@@ -24,13 +25,16 @@ class Search extends Component {
       
     }
 
-    onchange = e => {
-        this.setState({ search: e.target.value });
-    }
+    // onchange = e => {
+    //     this.setState({ search: e.target.value });
+    // }
 
     render() {
 
-        const { search } = this.state;
+        //const { search } = this.state;
+        //debugger;
+        const {search}  = this.props;
+        console.log(search, "{search}")
         const filteredProducts = Products.filter(product => {
             return product.title.toLowerCase().indexOf(search.toLowerCase()) !== -1
         })
@@ -39,7 +43,7 @@ class Search extends Component {
                 <main>
                     <div className="container">
                         <div className="flex flex-center">
-                            <input placeholder="Search Title..." onChange={this.onchange} />
+                            <input placeholder="Search Title..." onChange={this.props.onchange} />
                         </div>
                         <div className="row">
                             <div className='cardHomePage'>
@@ -54,6 +58,21 @@ class Search extends Component {
         );
     }
 }
-export default Search;
+
+const mapStateToProps = (state) => {
+    return{
+        search: state.search
+    }
+}
+const mapDispachToProps = (dispach) => ({ 
+
+        onchange: (value) => dispach({
+            type:'On_Change',
+            payload:value
+        })
+
+})
+
+export default connect(mapStateToProps, mapDispachToProps)(Search);
 
 
