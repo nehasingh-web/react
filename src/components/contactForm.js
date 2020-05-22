@@ -85,7 +85,7 @@ const ContactForm = (props) => {
             }
         }
     return (
-        <div className='contactForm'>Contact Form
+        <div className='contactForm'>
             <div className='flex-center form-wrapper'>
                 <div className='inputField'>
                     <input type="text" name='name' placeholder='Name' value={values.name} onChange={handleInput} id="inputText" />
@@ -99,7 +99,7 @@ const ContactForm = (props) => {
                 <div className='inputField'>
                     <textarea placeholder='Address' name='address' value={values.address} onChange={handleInput}></textarea>
                 </div>
-                <button type='submit' onClick={handleSubmit}> {currentId == '' ? 'Save' : 'Update'} </button>
+                <button type='submit' className='primary-btn' onClick={handleSubmit}> {currentId == '' ? 'Save' : 'Update'} </button>
             </div>
             <div>
                 <table className='table table-borderless table-striped table-hover'>

@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 import Home from './pages/home/Home';
 import About from './pages/about/About';
 import Contact from './pages/contact/Contact';
+import Cart from './components/Cart';
 
 
 class RouterFile extends Component {
@@ -20,8 +21,8 @@ class RouterFile extends Component {
   }
   render() {
     return (
-      <Router>
-          <button onClick={this.openSlideBar}>☰ Menu</button>
+      <>
+          <button onClick={this.openSlideBar} className='primary-btn'>☰ Menu</button>
           <div className='slide-box'>
         {this.state.isSlidebarOpen && <Box />}
         <div id="main">
@@ -29,11 +30,11 @@ class RouterFile extends Component {
             <Route exact path='/' component={Home} />
             <Route exact path='/about' component={About} />
             <Route exact path='/contact' component={Contact} />
+            <Route exact path="/cart" component={Cart}/>
           </Switch>
         </div>
         </div>
-      </Router>
-
+      </>
     )
   }
 
@@ -43,14 +44,14 @@ class Box extends Component {
     return (
         <div id="mySidebar" className="sidebar">
         <ul >
-          <li>
-            <Link to='/'>Home</Link>
+          <li className="p-10-25">
+            <Link to='/'> Home</Link>
           </li>
-          <li>
+          <li className="p-10-25">
             <Link to='/about'>About</Link>
           </li>
-          <li>
-            <Link to='/contact'>Contact</Link>
+          <li className="p-10-25">
+            <Link to='/contact'><span>&#9998;</span>Contact</Link>
           </li>
         </ul>
       </div>

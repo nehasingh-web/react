@@ -2,16 +2,12 @@
   /* text-align: center; */
 }
 .App-header {
-  min-height: 20vh;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; */
+  min-height: 12vh;
   font-size: calc(10px + 2vmin);
   color: #282c34;
-  margin:20px;
+  margin:20px 20px 20px 20px;
 }
-button{
+.primary-btn{
   width:150px;
   height:40px;
   border:1px solid #282c34;
@@ -20,7 +16,6 @@ button{
 }
 li{
   list-style-type: none;
-      padding: 10px 25px;
 }
 a{
   color:#ffffff !important;
@@ -32,6 +27,9 @@ input{
     width:400px;
     outline:none;
 }
+.p-10-25{
+  padding: 10px 25px;
+}
 .header{
   clear:both;
 }
@@ -42,6 +40,12 @@ input{
 }
 .user-header-info{
   float: right;
+  /* background-color: black; */
+  padding: 10px;
+}
+.user-header-info img{
+  width:80px;
+  height:80px;
 }
 .border-1px{
   border: 1px solid red;
@@ -63,10 +67,38 @@ input{
 .text-align-center{
   text-align: center;
 }
-
-
-
-
-
+.cursor-pointer{
+  cursor: pointer; 
+}
+.page-heading{
+  margin-left:40px;
+}
+.m-L-10{
+  margin-left:10px;
+}
+.m-R-30{
+  margin-right: 30px;
+}
+.m-R-10{
+  margin-right: 10px;
+}
+.clear-both{
+  clear:both;
+}
+.float-left{
+  float:left;
+}
+.float-right{
+  float:right
+}
+.color-black{
+  color:#000000 !important
+}
+.text-decoration-none{
+  text-decoration: none;
+}
+.js-b{
+  justify-content: space-between;
+}
 
 

@@ -13,14 +13,15 @@ class Detail extends Component {
     }
     renderList = list => {
         return <ul className='list-detail' key={list.id}>
-            <li><b>Title: </b>{list.title} </li>
+            <li className='p-10-25'><b>Title: </b>{list.title} </li>
         </ul>
     }
     render() {
         return (this.state.loading || !this.state.user ?
             (<div> Loading...</div>) :
             <div className="col">
-                <div className='flex-center'>Some Titles 
+                <div className='flex-center'>
+                <h5>Some Titles </h5>
                     {this.state.user.map(list => {
                         return this.renderList(list)
                     })}
