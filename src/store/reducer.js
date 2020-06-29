@@ -79,6 +79,9 @@ const reducer = (state = intialState, action) => {
             }
         }
     }
+    if(action.type === 'LOADING'){
+        newState.loading = true
+    }
 
     return newState;
 }

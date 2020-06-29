@@ -1,0 +1,104 @@
+import { configureMockStore } from '../../../../../utils/unitTestUtil';
+import {
+    fetchContributionActivityData,
+    startDateMobile,
+    endDateMobile,
+    updateFilterData,
+    getContributionData,
+    clearCurrentContribution,
+    cancelContribution
+} from '../actions';
+
+const store = configureMockStore();
+
+describe('Contribution activity fetch contribution activity data action', () => {
+    let fetchContributionActivityDataAction;
+    beforeEach(() => {
+      fetchContributionActivityDataAction = { type: 'FETCH_CONTRIBUTION_ACTIVITY_DATA', payload: undefined };
+      store.clearActions();
+      store.dispatch(fetchContributionActivityData());
+    });
+  
+    it('should dispatch fetchContributionActivityData action', () => {
+      const actions = store.getActions();
+      expect(actions).toEqual([fetchContributionActivityDataAction]);
+    });
+});
+describe('Contribution activity start date mobile action', () => {
+    let startDateMobileAction;
+    beforeEach(() => {
+      startDateMobileAction = { type: 'GET_START_DATE', payload: undefined };
+      store.clearActions();
+      store.dispatch(startDateMobile());
+    });
+  
+    it('should dispatch startDateMobile action', () => {
+      const actions = store.getActions();
+      expect(actions).toEqual([startDateMobileAction]);
+    });
+});
+describe('Contribution activity end date mobile action',() => {
+    let endDateMobileAction;
+    beforeEach(() => {
+        endDateMobileAction = { type: 'GET_END_DATE', payload: undefined };
+        store.clearActions();
+        store.dispatch(endDateMobile());
+    });
+
+    it('should dispatch endDateMobile action', () => {
+        const actions = store.getActions();
+        expect(actions).toEqual([endDateMobileAction]);
+    });
+});
+describe('Contribution activity upadate filter data action', () => {
+    let updateFilterDataAction;
+    beforeEach(() => {
+      updateFilterDataAction = { type: 'UPDATE_FILTER_DATA', payload: undefined };
+      store.clearActions();
+      store.dispatch(updateFilterData());
+    });
+  
+    it('should dispatch updateFilterData action', () => {
+      const actions = store.getActions();
+      expect(actions).toEqual([updateFilterDataAction]);
+    });
+});
+describe('Contribution activity get contributed data mobile',() => {
+    let getContributionDataAction;
+    beforeEach(() => {
+        getContributionDataAction = { type: 'GET_CONTRIBUTION_DATA_TRANSACTIONID', payload: undefined };
+        store.clearActions();
+        store.dispatch(getContributionData());
+    });
+
+    it('should dispatch getContributionData action', () => {
+        const actions = store.getActions();
+        expect(actions).toEqual([getContributionDataAction]);
+    });
+});
+describe('Contribution activity clear current contribution action',() => {
+    let clearCurrentContributionAction;
+    beforeEach(() => {
+        clearCurrentContributionAction = { type: 'CLEAR_CONTRIBUTION_DATA', payload: undefined };
+        store.clearActions();
+        store.dispatch(clearCurrentContribution());
+    });
+
+    it('should dispatch clearCurrentContribution action', () => {
+        const actions = store.getActions();
+        expect(actions).toEqual([clearCurrentContributionAction]);
+    });
+});
+describe('Contribution activity cancle contribution action',() => {
+    let cancelContributionAction;
+    beforeEach(() => {
+        cancelContributionAction = { type: 'CANCEL_CONTRIBUTION_ACTIVITY', payload: undefined };
+        store.clearActions();
+        store.dispatch(cancelContribution());
+    });
+
+    it('should dispatch cancelContribution action', () => {
+        const actions = store.getActions();
+        expect(actions).toEqual([cancelContributionAction]);
+    });
+});

@@ -1,0 +1,21 @@
+
+
+
+function  (){
+    var couter = 0;
+    var incrementCounter = function(){
+        counter++;
+        
+    }
+    return {
+        incrementCounter;
+    }
+}
+
+var a = updateCounter();
+a.incrementCounter();
+a.incrementCounter();
+
+var a1 = updateCounter();
+a1.incrementCounter();
+a1.incrementCounter();

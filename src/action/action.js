@@ -1,9 +1,21 @@
 import { ADD_TO_CART, REMOVE_ITEM, SUB_QUANTITY, ADD_QUANTITY } from './action-type';
 
-export const addToCart = (id) => {
+export const addToCartAsync = (id) => {
     return{
         type: 'ADD_TO_CART',
         id
+    }
+}
+export const loading = () => {
+    return{
+        type: 'LOADING'
+    }
+}
+export const addToCart = id => {
+    return dispach => {
+        setTimeout(()=>{
+            dispach(addToCartAsync(id))
+        }, 5000)
     }
 }
 export const removeItem = (id) => {

@@ -21,20 +21,20 @@ class RouterFile extends Component {
   }
   render() {
     return (
-      <>
-          <button onClick={this.openSlideBar} className='primary-btn'>☰ Menu</button>
-          <div className='slide-box'>
-        {this.state.isSlidebarOpen && <Box />}
+      <div>
+        <button onClick={this.openSlideBar} className='primary-btn'>☰ Menu</button>
+        <div className='slide-box'>
+          {this.state.isSlidebarOpen && <Box />}
+        </div>
         <div id="main">
           <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/about' component={About} />
             <Route exact path='/contact' component={Contact} />
-            <Route exact path="/cart" component={Cart}/>
+            <Route exact path="/cart" component={Cart} />
           </Switch>
         </div>
-        </div>
-      </>
+      </div>
     )
   }
 
@@ -42,7 +42,7 @@ class RouterFile extends Component {
 class Box extends Component {
   render() {
     return (
-        <div id="mySidebar" className="sidebar">
+      <div id="mySidebar" className="sidebar">
         <ul >
           <li className="p-10-25">
             <Link to='/'> Home</Link>

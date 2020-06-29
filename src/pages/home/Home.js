@@ -4,6 +4,9 @@ import { connect } from 'react-redux';
 import './Home.css';
 import { addToCart } from '../../action/action';
 import logo from '../../assets/nykaa_logo.svg';
+import cart1 from '../../assets/cart1.svg';
+import * as actionCreator from '../../action/action';
+import Test from '../../components/test';
 
 class Home extends Component {
     addToCart = (id) => {
@@ -21,6 +24,7 @@ class Home extends Component {
                     <b>Price:</b> ${product.price}
                 </div>
                 <div to="/" className="btn btn-info float-right" onClick={() => { this.addToCart(product.id) }} >Add To Cart</div>
+                {this.props.loading && <img src={cart1} className='app-logo'></img>}
             </div>
         )
     }
@@ -31,6 +35,7 @@ class Home extends Component {
         })
         return (
             <div className="container">
+                <Test />
                 <div className="flex flex-center">
                     <input placeholder="Search Title..." onChange={this.props.onchange} />
                 </div>
@@ -49,7 +54,8 @@ class Home extends Component {
 
 const mapStateToProps = (state) => ({
     search: state.search,
-    items: state.Products
+    items: state.Products,
+    loading: state.loading
 })
 const mapDispachToProps = (dispach) => ({
     onchange: (e) => dispach({
@@ -57,7 +63,7 @@ const mapDispachToProps = (dispach) => ({
         payload: e.target.value,
     }),
     addToCart: (id) => {
-        dispach(addToCart(id))
+        dispach(actionCreator.addToCart(id))
     }
 })
 

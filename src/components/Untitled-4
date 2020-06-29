@@ -1,0 +1,558 @@
+import {
++  setExchangeIntoTiff,
++  setInputValues,
++  valueExchangeFromTiff,
++  getTiffData,
++  getExpectedExchangeDate,
++  setStepOne,
++  setStepTwo,
++  selectTiffOption,
++  submitTiffForm,
++  getTiffFormInfo,
++  getTiffDisclaimer,
++  fetchPoolData,
++  fetchUnderlyingFunds,
++  setPoolModalFalse,
++  resetFlow,
++  submitUpdateTiff,
++  updateFromAmount,
++  getAllPools,
++  getPoolsInfo,
++  resetInitialFlow,
++  editMode,
++  fetchAllPoolDataFrom,
++  fetchAccountDataTiff,
++  submitFormData,
++  disableFrom,
++  valueInFormChange,
++  formDrupalContent,
++  submitDataSuccess,
++  submitDataError
++} from '../actions';
++
++import * as actionTypes from '../../../actionTypes';
++import { configureMockStore } from '../../../../../../../utils/unitTestUtil';
++
++const store = configureMockStore();
++
++describe('TIFF setExchangeIntoTiff action', () => {
++  let setExchangeIntoTiffAction;
++
++  beforeEach(() => {
++    setExchangeIntoTiffAction = {
++      type: actionTypes.setExchangeIntoTiffType,
++      payload: undefined
++    };
++    store.clearActions();
++    store.dispatch(setExchangeIntoTiff());
++  });
++
++  it('Should dispatch setExchangeIntoTiff action', () => {
++    const actions = store.getActions();
++    expect(actions).toEqual([setExchangeIntoTiffAction]);
++  });
++});
++
++describe('TIFF setInputValues action', () => {
++  let setInputValuesAction;
++
++  beforeEach(() => {
++    setInputValuesAction = {
++      type: actionTypes.setInputValuesType,
++      payload: undefined
++    };
++    store.clearActions();
++    store.dispatch(setInputValues());
++  });
++
++  it('Should dispatch setInputValues action', () => {
++    const actions = store.getActions();
++    expect(actions).toEqual([setInputValuesAction]);
++  });
++});
++
++describe('TIFF valueExchangeFromTiff action', () => {
++  let valueExchangeFromTiffAction;
++
++  beforeEach(() => {
++    valueExchangeFromTiffAction = {
++      type: actionTypes.valueExchangeFromTiffType,
++      payload: undefined
++    };
++    store.clearActions();
++    store.dispatch(valueExchangeFromTiff());
++  });
++
++  it('Should dispatch valueExchangeFromTiff action', () => {
++    const actions = store.getActions();
++    expect(actions).toEqual([valueExchangeFromTiffAction]);
++  });
++});
++
++describe('TIFF getTiffData action', () => {
++  let getTiffDataAction;
++
++  beforeEach(() => {
++    getTiffDataAction = {
++      type: actionTypes.getTiffDataType,
++      payload: undefined
++    };
++    store.clearActions();
++    store.dispatch(getTiffData());
++  });
++
++  it('Should dispatch getTiffData action', () => {
++    const actions = store.getActions();
++    expect(actions).toEqual([getTiffDataAction]);
++  });
++});
++
++describe('TIFF getExpectedExchangeDate action', () => {
++  let getExpectedExchangeDateAction;
++
++  beforeEach(() => {
++    getExpectedExchangeDateAction = {
++      type: actionTypes.getExpectedExchangeDateType,
++      payload: undefined
++    };
++    store.clearActions();
++    store.dispatch(getExpectedExchangeDate());
++  });
++
++  it('Should dispatch getExpectedExchangeDate action', () => {
++    const actions = store.getActions();
++    expect(actions).toEqual([getExpectedExchangeDateAction]);
++  });
++});
++
++describe('TIFF setStepOne action', () => {
++  let setStepOneAction;
++
++  beforeEach(() => {
++    setStepOneAction = {
++      type: actionTypes.setStepOneType,
++      payload: undefined
++    };
++    store.clearActions();
++    store.dispatch(setStepOne());
++  });
++
++  it('Should dispatch setStepOne action', () => {
++    const actions = store.getActions();
++    expect(actions).toEqual([setStepOneAction]);
++  });
++});
++
++describe('TIFF setStepTwo action', () => {
++  let setStepTwoAction;
++
++  beforeEach(() => {
++    setStepTwoAction = {
++      type: actionTypes.setStepTwoType,
++      payload: undefined
++    };
++    store.clearActions();
++    store.dispatch(setStepTwo());
++  });
++
++  it('Should dispatch setStepTwo action', () => {
++    const actions = store.getActions();
++    expect(actions).toEqual([setStepTwoAction]);
++  });
++});
++
++describe('TIFF selectTiffOption action', () => {
++  let selectTiffOptionAction;
++
++  beforeEach(() => {
++    selectTiffOptionAction = {
++      type: actionTypes.selectTiffOptionType,
++      payload: undefined
++    };
++    store.clearActions();
++    store.dispatch(selectTiffOption());
++  });
++
++  it('Should dispatch selectTiffOption action', () => {
++    const actions = store.getActions();
++    expect(actions).toEqual([selectTiffOptionAction]);
++  });
++});
++
++describe('TIFF submitTiffForm action', () => {
++  let submitTiffFormAction;
++
++  beforeEach(() => {
++    submitTiffFormAction = {
++      type: actionTypes.submitTiffFormType,
++      payload: undefined
++    };
++    store.clearActions();
++    store.dispatch(submitTiffForm());
++  });
++
++  it('Should dispatch submitTiffForm action', () => {
++    const actions = store.getActions();
++    expect(actions).toEqual([submitTiffFormAction]);
++  });
++});
++
++describe('TIFF getTiffFormInfo action', () => {
++  let getTiffFormInfoAction;
++
++  beforeEach(() => {
++    getTiffFormInfoAction = {
++      type: actionTypes.getTiffFormInfoType,
++      payload: undefined
++    };
++    store.clearActions();
++    store.dispatch(getTiffFormInfo());
++  });
++
++  it('Should dispatch getTiffFormInfo action', () => {
++    const actions = store.getActions();
++    expect(actions).toEqual([getTiffFormInfoAction]);
++  });
++});
++
++describe('TIFF getTiffDisclaimer action', () => {
++  let getTiffDisclaimerAction;
++
++  beforeEach(() => {
++    getTiffDisclaimerAction = {
++      type: actionTypes.getTiffDisclaimerType,
++      payload: undefined
++    };
++    store.clearActions();
++    store.dispatch(getTiffDisclaimer());
++  });
++
++  it('Should dispatch getTiffDisclaimer action', () => {
++    const actions = store.getActions();
++    expect(actions).toEqual([getTiffDisclaimerAction]);
++  });
++});
++
++describe('TIFF fetchPoolData action', () => {
++  let fetchPoolDataAction;
++
++  beforeEach(() => {
++    fetchPoolDataAction = {
++      type: actionTypes.fetchPoolDataType,
++      payload: undefined
++    };
++    store.clearActions();
++    store.dispatch(fetchPoolData());
++  });
++
++  it('Should dispatch fetchPoolData action', () => {
++    const actions = store.getActions();
++    expect(actions).toEqual([fetchPoolDataAction]);
++  });
++});
++
++describe('TIFF fetchUnderlyingFunds action', () => {
++  let fetchUnderlyingFundsAction;
++
++  beforeEach(() => {
++    fetchUnderlyingFundsAction = {
++      type: actionTypes.fetchUnderlyingFundsType,
++      payload: undefined
++    };
++    store.clearActions();
++    store.dispatch(fetchUnderlyingFunds());
++  });
++
++  it('Should dispatch fetchUnderlyingFunds action', () => {
++    const actions = store.getActions();
++    expect(actions).toEqual([fetchUnderlyingFundsAction]);
++  });
++});
++
++describe('TIFF setPoolModalFalse action', () => {
++  let setPoolModalFalseAction;
++
++  beforeEach(() => {
++    setPoolModalFalseAction = {
++      type: actionTypes.setPoolModalFalseType,
++      payload: undefined
++    };
++    store.clearActions();
++    store.dispatch(setPoolModalFalse());
++  });
++
++  it('Should dispatch setPoolModalFalse action', () => {
++    const actions = store.getActions();
++    expect(actions).toEqual([setPoolModalFalseAction]);
++  });
++});
++
++describe('TIFF resetFlow action', () => {
++  let resetFlowAction;
++
++  beforeEach(() => {
++    resetFlowAction = {
++      type: actionTypes.resetFlowType,
++      payload: undefined
++    };
++    store.clearActions();
++    store.dispatch(resetFlow());
++  });
++
++  it('Should dispatch resetFlow action', () => {
++    const actions = store.getActions();
++    expect(actions).toEqual([resetFlowAction]);
++  });
++});
++
++describe('TIFF submitUpdateTiff action', () => {
++  let submitUpdateTiffAction;
++
++  beforeEach(() => {
++    submitUpdateTiffAction = {
++      type: actionTypes.submitUpdateTiffType,
++      payload: undefined
++    };
++    store.clearActions();
++    store.dispatch(submitUpdateTiff());
++  });
++
++  it('Should dispatch submitUpdateTiff action', () => {
++    const actions = store.getActions();
++    expect(actions).toEqual([submitUpdateTiffAction]);
++  });
++});
++
++describe('TIFF updateFromAmount action', () => {
++  let updateFromAmountAction;
++
++  beforeEach(() => {
++    updateFromAmountAction = {
++      type: actionTypes.updateFromAmountType,
++      payload: undefined
++    };
++    store.clearActions();
++    store.dispatch(updateFromAmount());
++  });
++
++  it('Should dispatch updateFromAmount action', () => {
++    const actions = store.getActions();
++    expect(actions).toEqual([updateFromAmountAction]);
++  });
++});
++
++describe('TIFF getAllPools action', () => {
++  let getAllPoolsAction;
++
++  beforeEach(() => {
++    getAllPoolsAction = {
++      type: actionTypes.getAllPoolsType,
++      payload: undefined
++    };
++    store.clearActions();
++    store.dispatch(getAllPools());
++  });
++
++  it('Should dispatch getAllPools action', () => {
++    const actions = store.getActions();
++    expect(actions).toEqual([getAllPoolsAction]);
++  });
++});
++
++describe('TIFF getPoolsInfo action', () => {
++  let getPoolsInfoAction;
++
++  beforeEach(() => {
++    getPoolsInfoAction = {
++      type: actionTypes.getPoolsInfoType,
++      payload: undefined
++    };
++    store.clearActions();
++    store.dispatch(getPoolsInfo());
++  });
++
++  it('Should dispatch getPoolsInfo action', () => {
++    const actions = store.getActions();
++    expect(actions).toEqual([getPoolsInfoAction]);
++  });
++});
++
++describe('TIFF resetInitialFlow action', () => {
++  let resetInitialFlowAction;
++
++  beforeEach(() => {
++    resetInitialFlowAction = {
++      type: actionTypes.resetInitialFlowType,
++      payload: undefined
++    };
++    store.clearActions();
++    store.dispatch(resetInitialFlow());
++  });
++
++  it('Should dispatch resetInitialFlow action', () => {
++    const actions = store.getActions();
++    expect(actions).toEqual([resetInitialFlowAction]);
++  });
++});
++
++describe('TIFF editMode action', () => {
++  let editModeAction;
++
++  beforeEach(() => {
++    editModeAction = {
++      type: actionTypes.editModeType,
++      payload: undefined
++    };
++    store.clearActions();
++    store.dispatch(editMode());
++  });
++
++  it('Should dispatch editMode action', () => {
++    const actions = store.getActions();
++    expect(actions).toEqual([editModeAction]);
++  });
++});
++
++describe('TIFF fetchAllPoolDataFrom action', () => {
++  let fetchAllPoolDataFromAction;
++
++  beforeEach(() => {
++    fetchAllPoolDataFromAction = {
++      type: actionTypes.fetchAllPoolDataFromType,
++      payload: undefined
++    };
++    store.clearActions();
++    store.dispatch(fetchAllPoolDataFrom());
++  });
++
++  it('Should dispatch fetchAllPoolDataFrom action', () => {
++    const actions = store.getActions();
++    expect(actions).toEqual([fetchAllPoolDataFromAction]);
++  });
++});
++
++describe('TIFF fetchAccountDataTiff action', () => {
++  let fetchAccountDataTiffAction;
++
++  beforeEach(() => {
++    fetchAccountDataTiffAction = {
++      type: actionTypes.fetchAccountDataTiffType,
++      payload: undefined
++    };
++    store.clearActions();
++    store.dispatch(fetchAccountDataTiff());
++  });
++
++  it('Should dispatch fetchAccountDataTiff action', () => {
++    const actions = store.getActions();
++    expect(actions).toEqual([fetchAccountDataTiffAction]);
++  });
++});
++
++describe('TIFF submitFormData action', () => {
++  let submitFormDataAction;
++
++  beforeEach(() => {
++    submitFormDataAction = {
++      type: actionTypes.submitFormDataType,
++      payload: undefined
++    };
++    store.clearActions();
++    store.dispatch(submitFormData());
++  });
++
++  it('Should dispatch submitFormData action', () => {
++    const actions = store.getActions();
++    expect(actions).toEqual([submitFormDataAction]);
++  });
++});
++
++describe('TIFF disableFrom action', () => {
++  let disableFromAction;
++
++  beforeEach(() => {
++    disableFromAction = {
++      type: actionTypes.disableFromType,
++      payload: undefined
++    };
++    store.clearActions();
++    store.dispatch(disableFrom());
++  });
++
++  it('Should dispatch disableFrom action', () => {
++    const actions = store.getActions();
++    expect(actions).toEqual([disableFromAction]);
++  });
++});
++
++describe('TIFF valueInFormChange action', () => {
++  let valueInFormChangeAction;
++
++  beforeEach(() => {
++    valueInFormChangeAction = {
++      type: actionTypes.valueInFormChangeType,
++      payload: undefined
++    };
++    store.clearActions();
++    store.dispatch(valueInFormChange());
++  });
++
++  it('Should dispatch valueInFormChange action', () => {
++    const actions = store.getActions();
++    expect(actions).toEqual([valueInFormChangeAction]);
++  });
++});
++
++describe('TIFF formDrupalContent action', () => {
++  let formDrupalContentAction;
++
++  beforeEach(() => {
++    formDrupalContentAction = {
++      type: actionTypes.formDrupalContentType,
++      payload: undefined
++    };
++    store.clearActions();
++    store.dispatch(formDrupalContent());
++  });
++
++  it('Should dispatch formDrupalContent action', () => {
++    const actions = store.getActions();
++    expect(actions).toEqual([formDrupalContentAction]);
++  });
++});
++
++describe('TIFF submitDataSuccess action', () => {
++  let submitDataSuccessAction;
++
++  beforeEach(() => {
++    submitDataSuccessAction = {
++      type: actionTypes.submitDataSuccessType,
++      payload: undefined
++    };
++    store.clearActions();
++    store.dispatch(submitDataSuccess());
++  });
++
++  it('Should dispatch submitDataSuccess action', () => {
++    const actions = store.getActions();
++    expect(actions).toEqual([submitDataSuccessAction]);
++  });
++});
++
++describe('TIFF submitDataError action', () => {
++  let submitDataErrorAction;
++
++  beforeEach(() => {
++    submitDataErrorAction = {
++      type: actionTypes.submitDataErrorType,
++      payload: undefined
++    };
++    store.clearActions();
++    store.dispatch(submitDataError());
++  });
++
++  it('Should dispatch submitDataError action', () => {
++    const actions = store.getActions();
++    expect(actions).toEqual([submitDataErrorAction]);
++  });
++});

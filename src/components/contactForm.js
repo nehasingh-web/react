@@ -24,7 +24,7 @@ const ContactForm = (props) => {
     }, [])
 
     useEffect(() => {   //edit functionality for populating details in form
-        if (currentId == '')
+        if (currentId === '')
             setValues({
                 ...intialFieldValues
             })
@@ -135,3 +135,12 @@ const ContactForm = (props) => {
 }
 export default ContactForm;
 
+// function alt(){
+//     a=10;
+//     b.a=10; 
+// }; 
+// var a= 2; 
+// var b ={a:2, b:3}; 
+// alt(a,b); 
+// console.log(a); 
+// console.log(b.a); 

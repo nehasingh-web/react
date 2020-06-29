@@ -1,0 +1,73 @@
+
+class App extends Component{
+    constuctor(props){
+        super(props)
+        this.state = {
+            data:[],
+            index:'',
+            act:0
+        }
+    }
+
+    fsubmit = (e) => {
+        e.preventDefault();
+        let datas = this.state.datas;
+        let name = this.ref.name.value;
+        let gender = this.ref.gender.value;
+
+        if(this.setState.act == 0){
+            let data = {
+                name, gender
+            } 
+            datas.push(data);
+        }else{
+            let index = this.state.index;
+            datas[index].name = name;
+            datas[index].gender = gender
+        }
+        let setState({ datas: datas, act:0})
+    }
+    fEdit = (i) => {
+        let datas = this.state.datas[i];
+        this.ref.name.value = datas.name;
+        this.ref.name.value = datas.gender;
+        this.setState({act:1,index:i})
+    }
+    fRemove = (i) => {
+        let datas = this.state.datas[i];
+        datas.splice(i,1);
+        this.setState({datas: datas});
+
+    }
+    render(){
+        let datas = this.state.datas;
+        return(
+            <div>
+            <form ref ='contact'>
+            <input type='text' ref= 'name' placeholder='name'/>
+            <input type='text' ref= 'gender' placeholder='gender' />
+             <button onClick= {(e)=> this.fsubmit(e)}>Submit</button>
+            </form>
+
+            <pre>
+            {datas.map((data,i) => 
+                <li key = {i}
+                {data.name}, {data.gender}
+                <button onclick={()=> this.fEdit(i)}Edit</button>
+                <button onclick={()=> this.fRemove(i)}Edit</button>
+                </li>
+            )}
+            </pre>
+            </div>
+
+        )
+    }
+}export default App;
+
+var str = 'india.is.our.country';
+var words = str.split('.');
+var reverse = '';
+for(var i=0 ; i<words.length; i++){
+    reverse = words[i] + " " + reverse
+}
+console.log(reverse);

@@ -1,0 +1,656 @@
+import { configureMockStore } from '../../../../../../utils/unitTestUtil';
+import {
+    initializeValues,
+    changeAccountType,
+    changeAddress,
+    changeAddressValue,
+    changeAccountNumber,
+    changeFundDetails,
+    checkVGMutualFund,
+    addMutualFund,
+    addnewFundDetails,
+    clearfundDetails,
+    removeFundInfo,
+    updateAOAccountNumber,
+    getZipCode,
+    updateLoggedinAddress,
+    allocationPreference,
+    UpdateFormInReducer,
+    resetAllocationPools,
+    switchExchangeUnit,
+    updateFromTotal,
+    updateFromFormField,
+    updateRecordedVal,
+    clearFormData,
+    removeContributionType,
+    getAPIData,
+    createContribution,
+    updateContributionError,
+    updateContributionStatus,
+    updateContributionStatusJson,
+    generateAccesKey,
+    step1Edit,
+    updateClearStatus,
+    updateAutoFilledStatus,
+    showErrorMessages,
+    updateErrorMessage,
+    updateAdditionalData,
+    updateZipCodeValues,
+    updateZipCodeErrorMessage,
+    updateSelectedTicker
+} from '../../actions';
+
+import * as actionTypes from '../../actionTypes';
+
+const store = configureMockStore();
+
+describe('MAC initializeValues action', () => {
+    let initializeValuesAction;
+    beforeEach(() => {
+      initializeValuesAction = {
+           type: actionTypes.initializeValuesType, 
+           payload: undefined 
+        };
+      store.clearActions();
+      store.dispatch(initializeValues());
+    });
+  
+    it('should dispatch initializeValues action', () => {
+      const actions = store.getActions();
+      expect(actions).toEqual([initializeValuesAction]);
+    });
+});
+describe('MAC changeAccountType action', () => {
+  let changeAccountTypeAction;
+  beforeEach(() => {
+    changeAccountTypeAction = {
+         type: actionTypes.changeAccountType, 
+         payload: undefined 
+      };
+    store.clearActions();
+    store.dispatch(changeAccountType());
+  });
+
+  it('should dispatch changeAccountType action', () => {
+    const actions = store.getActions();
+    expect(actions).toEqual([changeAccountTypeAction]);
+  });
+});
+describe('MAC changeAddress action', () => {
+  let changeAddressAction;
+  beforeEach(() => {
+    changeAddressAction = {
+         type: actionTypes.changeAddressType, 
+         payload: undefined 
+      };
+    store.clearActions();
+    store.dispatch(changeAddress());
+  });
+
+  it('should dispatch changeAddress action', () => {
+    const actions = store.getActions();
+    expect(actions).toEqual([changeAddressAction]);
+  });
+});
+describe('MAC changeAddressValue action', () => {
+  let changeAddressValueAction;
+  beforeEach(() => {
+    changeAddressValueAction = {
+         type: actionTypes.changeAddressValueType, 
+         payload: undefined 
+      };
+    store.clearActions();
+    store.dispatch(changeAddressValue());
+  });
+
+  it('should dispatch changeAddressValue action', () => {
+    const actions = store.getActions();
+    expect(actions).toEqual([changeAddressValueAction]);
+  });
+});
+describe('MAC changeAccountNumber action', () => {
+  let changeAccountNumberAction;
+  beforeEach(() => {
+    changeAccountNumberAction = {
+         type: actionTypes.changeAccountNumberType, 
+         payload: undefined 
+      };
+    store.clearActions();
+    store.dispatch(changeAccountNumber());
+  });
+
+  it('should dispatch changeAccountNumber action', () => {
+    const actions = store.getActions();
+    expect(actions).toEqual([changeAccountNumberAction]);
+  });
+});
+describe('MAC changeFundDetails action', () => {
+  let changeFundDetailsAction;
+  beforeEach(() => {
+    changeFundDetailsAction = {
+         type: actionTypes.changeFundDetailsType, 
+         payload: undefined 
+      };
+    store.clearActions();
+    store.dispatch(changeFundDetails());
+  });
+
+  it('should dispatch changeFundDetails action', () => {
+    const actions = store.getActions();
+    expect(actions).toEqual([changeFundDetailsAction]);
+  });
+});
+describe('MAC checkVGMutualFund action', () => {
+  let checkVGMutualFundAction;
+  beforeEach(() => {
+    checkVGMutualFundAction = {
+         type: actionTypes.checkVGMutualFundType, 
+         payload: undefined 
+      };
+    store.clearActions();
+    store.dispatch(checkVGMutualFund());
+  });
+
+  it('should dispatch checkVGMutualFund action', () => {
+    const actions = store.getActions();
+    expect(actions).toEqual([checkVGMutualFundAction]);
+  });
+});
+describe('MAC addMutualFund action', () => {
+  let addMutualFundAction;
+  beforeEach(() => {
+    addMutualFundAction = {
+         type: actionTypes.addMutualFundType, 
+         payload: undefined 
+      };
+    store.clearActions();
+    store.dispatch(addMutualFund());
+  });
+
+  it('should dispatch addMutualFund action', () => {
+    const actions = store.getActions();
+    expect(actions).toEqual([addMutualFundAction]);
+  });
+});
+describe('MAC addnewFundDetails action', () => {
+  let addnewFundDetailsAction;
+  beforeEach(() => {
+    addnewFundDetailsAction = {
+         type: actionTypes.addnewFundDetailsType, 
+         payload: undefined 
+      };
+    store.clearActions();
+    store.dispatch(addnewFundDetails());
+  });
+
+  it('should dispatch addnewFundDetails action', () => {
+    const actions = store.getActions();
+    expect(actions).toEqual([addnewFundDetailsAction]);
+  });
+});
+describe('MAC clearfundDetails action', () => {
+  let clearfundDetailsAction;
+  beforeEach(() => {
+    clearfundDetailsAction = {
+         type: actionTypes.clearfundDetailsType, 
+         payload: undefined 
+      };
+    store.clearActions();
+    store.dispatch(clearfundDetails());
+  });
+
+  it('should dispatch clearfundDetails action', () => {
+    const actions = store.getActions();
+    expect(actions).toEqual([clearfundDetailsAction]);
+  });
+});
+describe('MAC removeFundInfo action', () => {
+  let removeFundInfoAction;
+  beforeEach(() => {
+    removeFundInfoAction = {
+         type: actionTypes.removeFundInfoType, 
+         payload: undefined 
+      };
+    store.clearActions();
+    store.dispatch(removeFundInfo());
+  });
+
+  it('should dispatch removeFundInfo action', () => {
+    const actions = store.getActions();
+    expect(actions).toEqual([removeFundInfoAction]);
+  });
+});
+describe('MAC updateAOAccountNumber action', () => {
+  let updateAOAccountNumberAction;
+  beforeEach(() => {
+    updateAOAccountNumberAction = {
+         type: actionTypes.updateAOAccountNumberType, 
+         payload: undefined 
+      };
+    store.clearActions();
+    store.dispatch(updateAOAccountNumber());
+  });
+
+  it('should dispatch updateAOAccountNumber action', () => {
+    const actions = store.getActions();
+    expect(actions).toEqual([updateAOAccountNumberAction]);
+  });
+});
+describe('MAC getZipCode action', () => {
+  let getZipCodeAction;
+  beforeEach(() => {
+    getZipCodeAction = {
+         type: actionTypes.getZipCodeType, 
+         payload: undefined 
+      };
+    store.clearActions();
+    store.dispatch(getZipCode());
+  });
+
+  it('should dispatch getZipCode action', () => {
+    const actions = store.getActions();
+    expect(actions).toEqual([getZipCodeAction]);
+  });
+});
+describe('MAC updateLoggedinAddress action', () => {
+  let updateLoggedinAddressAction;
+  beforeEach(() => {
+    updateLoggedinAddressAction = {
+         type: actionTypes.updateLoggedinAddressType, 
+         payload: undefined 
+      };
+    store.clearActions();
+    store.dispatch(updateLoggedinAddress());
+  });
+
+  it('should dispatch updateLoggedinAddress action', () => {
+    const actions = store.getActions();
+    expect(actions).toEqual([updateLoggedinAddressAction]);
+  });
+});
+describe('MAC allocationPreference action', () => {
+  let allocationPreferenceAction;
+  beforeEach(() => {
+    allocationPreferenceAction = {
+         type: actionTypes.allocationPreferenceType, 
+         payload: undefined 
+      };
+    store.clearActions();
+    store.dispatch(allocationPreference());
+  });
+
+  it('should dispatch allocationPreference action', () => {
+    const actions = store.getActions();
+    expect(actions).toEqual([allocationPreferenceAction]);
+  });
+});
+describe('MAC UpdateFormInReducer action', () => {
+  let UpdateFormInReducerAction;
+  beforeEach(() => {
+    UpdateFormInReducerAction = {
+         type: actionTypes.UpdateFormInReducerType, 
+         payload: undefined 
+      };
+    store.clearActions();
+    store.dispatch(UpdateFormInReducer());
+  });
+
+  it('should dispatch UpdateFormInReducer action', () => {
+    const actions = store.getActions();
+    expect(actions).toEqual([UpdateFormInReducerAction]);
+  });
+});
+describe('MAC resetAllocationPools action', () => {
+  let resetAllocationPoolsAction;
+  beforeEach(() => {
+    resetAllocationPoolsAction = {
+         type: actionTypes.resetAllocationPoolsType, 
+         payload: undefined 
+      };
+    store.clearActions();
+    store.dispatch(resetAllocationPools());
+  });
+
+  it('should dispatch resetAllocationPools action', () => {
+    const actions = store.getActions();
+    expect(actions).toEqual([resetAllocationPoolsAction]);
+  });
+});
+describe('MAC switchExchangeUnit action', () => {
+  let switchExchangeUnitAction;
+  beforeEach(() => {
+    switchExchangeUnitAction = {
+         type: actionTypes.switchExchangeUnitType, 
+         payload: undefined 
+      };
+    store.clearActions();
+    store.dispatch(switchExchangeUnit());
+  });
+
+  it('should dispatch switchExchangeUnit action', () => {
+    const actions = store.getActions();
+    expect(actions).toEqual([switchExchangeUnitAction]);
+  });
+});
+describe('MAC updateFromTotal action', () => {
+  let updateFromTotalAction;
+  beforeEach(() => {
+    updateFromTotalAction = {
+         type: actionTypes.updateFromTotalType, 
+         payload: undefined 
+      };
+    store.clearActions();
+    store.dispatch(updateFromTotal());
+  });
+
+  it('should dispatch updateFromTotal action', () => {
+    const actions = store.getActions();
+    expect(actions).toEqual([updateFromTotalAction]);
+  });
+});
+describe('MAC updateFromFormField action', () => {
+  let updateFromFormFieldAction;
+  beforeEach(() => {
+    updateFromFormFieldAction = {
+         type: actionTypes.updateFromFormFieldType, 
+         payload: undefined 
+      };
+    store.clearActions();
+    store.dispatch(updateFromFormField());
+  });
+
+  it('should dispatch updateFromFormField action', () => {
+    const actions = store.getActions();
+    expect(actions).toEqual([updateFromFormFieldAction]);
+  });
+});
+describe('MAC updateRecordedVal action', () => {
+  let updateRecordedValAction;
+  beforeEach(() => {
+    updateRecordedValAction = {
+         type: actionTypes.updateRecordedValType, 
+         payload: undefined 
+      };
+    store.clearActions();
+    store.dispatch(updateRecordedVal());
+  });
+
+  it('should dispatch updateRecordedVal action', () => {
+    const actions = store.getActions();
+    expect(actions).toEqual([updateRecordedValAction]);
+  });
+});
+describe('MAC clearFormData action', () => {
+  let clearFormDataAction;
+  beforeEach(() => {
+    clearFormDataAction = {
+         type: actionTypes.clearFormDataType, 
+         payload: undefined 
+      };
+    store.clearActions();
+    store.dispatch(clearFormData());
+  });
+
+  it('should dispatch clearFormData action', () => {
+    const actions = store.getActions();
+    expect(actions).toEqual([clearFormDataAction]);
+  });
+});
+describe('MAC removeContributionType action', () => {
+  let removeContributionTypeAction;
+  beforeEach(() => {
+    removeContributionTypeAction = {
+         type: actionTypes.removeContributionType, 
+         payload: undefined 
+      };
+    store.clearActions();
+    store.dispatch(removeContributionType());
+  });
+
+  it('should dispatch removeContributionType action', () => {
+    const actions = store.getActions();
+    expect(actions).toEqual([removeContributionTypeAction]);
+  });
+});
+describe('MAC getAPIData action', () => {
+  let getAPIDataAction;
+  beforeEach(() => {
+    getAPIDataAction = {
+         type: actionTypes.getAPIDataType, 
+         payload: undefined 
+      };
+    store.clearActions();
+    store.dispatch(getAPIData());
+  });
+
+  it('should dispatch getAPIData action', () => {
+    const actions = store.getActions();
+    expect(actions).toEqual([getAPIDataAction]);
+  });
+});
+describe('MAC createContribution action', () => {
+  let createContributionAction;
+  beforeEach(() => {
+    createContributionAction = {
+         type: actionTypes.createContributionType, 
+         payload: undefined 
+      };
+    store.clearActions();
+    store.dispatch(createContribution());
+  });
+
+  it('should dispatch createContribution action', () => {
+    const actions = store.getActions();
+    expect(actions).toEqual([createContributionAction]);
+  });
+});
+describe('MAC updateContributionError action', () => {
+  let updateContributionErrorAction;
+  beforeEach(() => {
+    updateContributionErrorAction = {
+         type: actionTypes.updateContributionErrorType, 
+         payload: undefined 
+      };
+    store.clearActions();
+    store.dispatch(updateContributionError());
+  });
+
+  it('should dispatch updateContributionError action', () => {
+    const actions = store.getActions();
+    expect(actions).toEqual([updateContributionErrorAction]);
+  });
+});
+describe('MAC updateContributionStatus action', () => {
+  let updateContributionStatusAction;
+  beforeEach(() => {
+    updateContributionStatusAction = {
+         type: actionTypes.updateContributionStatusType, 
+         payload: undefined 
+      };
+    store.clearActions();
+    store.dispatch(updateContributionStatus());
+  });
+
+  it('should dispatch updateContributionStatus action', () => {
+    const actions = store.getActions();
+    expect(actions).toEqual([updateContributionStatusAction]);
+  });
+});
+describe('MAC updateContributionStatusJson action', () => {
+  let updateContributionStatusJsonAction;
+  beforeEach(() => {
+    updateContributionStatusJsonAction = {
+         type: actionTypes.updateContributionStatusJsonType, 
+         payload: undefined 
+      };
+    store.clearActions();
+    store.dispatch(updateContributionStatusJson());
+  });
+
+  it('should dispatch updateContributionStatusJson action', () => {
+    const actions = store.getActions();
+    expect(actions).toEqual([updateContributionStatusJsonAction]);
+  });
+});
+describe('MAC generateAccesKey action', () => {
+  let generateAccesKeyAction;
+  beforeEach(() => {
+    generateAccesKeyAction = {
+         type: actionTypes.generateAccesKeyType, 
+         payload: undefined 
+      };
+    store.clearActions();
+    store.dispatch(generateAccesKey());
+  });
+
+  it('should dispatch generateAccesKey action', () => {
+    const actions = store.getActions();
+    expect(actions).toEqual([generateAccesKeyAction]);
+  });
+});
+describe('MAC step1Edit action', () => {
+  let step1EditAction;
+  beforeEach(() => {
+    step1EditAction = {
+         type: actionTypes.step1EditType, 
+         payload: undefined 
+      };
+    store.clearActions();
+    store.dispatch(step1Edit());
+  });
+
+  it('should dispatch step1Edit action', () => {
+    const actions = store.getActions();
+    expect(actions).toEqual([step1EditAction]);
+  });
+});
+describe('MAC updateClearStatus action', () => {
+  let updateClearStatusAction;
+  beforeEach(() => {
+    updateClearStatusAction = {
+         type: actionTypes.updateClearStatusType, 
+         payload: undefined 
+      };
+    store.clearActions();
+    store.dispatch(updateClearStatus());
+  });
+
+  it('should dispatch updateClearStatus action', () => {
+    const actions = store.getActions();
+    expect(actions).toEqual([updateClearStatusAction]);
+  });
+});
+describe('MAC updateAutoFilledStatus action', () => {
+  let updateAutoFilledStatusAction;
+  beforeEach(() => {
+    updateAutoFilledStatusAction = {
+         type: actionTypes.updateAutoFilledStatusType, 
+         payload: undefined 
+      };
+    store.clearActions();
+    store.dispatch(updateAutoFilledStatus());
+  });
+
+  it('should dispatch updateAutoFilledStatus action', () => {
+    const actions = store.getActions();
+    expect(actions).toEqual([updateAutoFilledStatusAction]);
+  });
+});
+describe('MAC showErrorMessages action', () => {
+  let showErrorMessagesAction;
+  beforeEach(() => {
+    showErrorMessagesAction = {
+         type: actionTypes.showErrorMessagesType, 
+         payload: undefined 
+      };
+    store.clearActions();
+    store.dispatch(showErrorMessages());
+  });
+
+  it('should dispatch showErrorMessages action', () => {
+    const actions = store.getActions();
+    expect(actions).toEqual([showErrorMessagesAction]);
+  });
+});
+describe('MAC updateErrorMessage action', () => {
+  let updateErrorMessageAction;
+  beforeEach(() => {
+    updateErrorMessageAction = {
+         type: actionTypes.updateErrorMessageType, 
+         payload: undefined 
+      };
+    store.clearActions();
+    store.dispatch(updateErrorMessage());
+  });
+
+  it('should dispatch updateErrorMessage action', () => {
+    const actions = store.getActions();
+    expect(actions).toEqual([updateErrorMessageAction]);
+  });
+});
+describe('MAC updateAdditionalData action', () => {
+  let updateAdditionalDataAction;
+  beforeEach(() => {
+    updateAdditionalDataAction = {
+         type: actionTypes.updateAdditionalDataType, 
+         payload: undefined 
+      };
+    store.clearActions();
+    store.dispatch(updateAdditionalData());
+  });
+
+  it('should dispatch updateAdditionalData action', () => {
+    const actions = store.getActions();
+    expect(actions).toEqual([updateAdditionalDataAction]);
+  });
+});
+describe('MAC updateZipCodeValues action', () => {
+  let updateZipCodeValuesAction;
+  beforeEach(() => {
+    updateZipCodeValuesAction = {
+         type: actionTypes.updateZipCodeValuesType, 
+         payload: undefined 
+      };
+    store.clearActions();
+    store.dispatch(updateZipCodeValues());
+  });
+
+  it('should dispatch updateZipCodeValues action', () => {
+    const actions = store.getActions();
+    expect(actions).toEqual([updateZipCodeValuesAction]);
+  });
+});
+describe('MAC updateZipCodeErrorMessage action', () => {
+  let updateZipCodeErrorMessageAction;
+  beforeEach(() => {
+    updateZipCodeErrorMessageAction = {
+         type: actionTypes.updateZipCodeErrorMessageType, 
+         payload: undefined 
+      };
+    store.clearActions();
+    store.dispatch(updateZipCodeErrorMessage());
+  });
+
+  it('should dispatch updateZipCodeErrorMessage action', () => {
+    const actions = store.getActions();
+    expect(actions).toEqual([updateZipCodeErrorMessageAction]);
+  });
+});
+describe('MAC updateSelectedTicker action', () => {
+  let updateSelectedTickerAction;
+  beforeEach(() => {
+    updateSelectedTickerAction = {
+         type: actionTypes.updateSelectedTickerType, 
+         payload: undefined 
+      };
+    store.clearActions();
+    store.dispatch(updateSelectedTicker());
+  });
+
+  it('should dispatch updateSelectedTicker action', () => {
+    const actions = store.getActions();
+    expect(actions).toEqual([updateSelectedTickerAction]);
+  });
+});
+
+
