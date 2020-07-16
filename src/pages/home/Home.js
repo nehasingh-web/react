@@ -6,7 +6,7 @@ import { addToCart } from '../../action/action';
 import logo from '../../assets/nykaa_logo.svg';
 import cart1 from '../../assets/cart1.svg';
 import * as actionCreator from '../../action/action';
-import Test from '../../components/test';
+//import Test from '../../components/test';
 
 class Home extends Component {
     addToCart = (id) => {
@@ -35,7 +35,7 @@ class Home extends Component {
         })
         return (
             <div className="container">
-                <Test />
+                {/* <Test /> */}
                 <div className="flex flex-center">
                     <input placeholder="Search Title..." onChange={this.props.onchange} />
                 </div>
